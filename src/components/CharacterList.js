@@ -1,15 +1,16 @@
 import CharacterCard from "./CharacterCard";
 import "../styles/CharacterList.scss";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CharacterList = (props) => {
-  const characterElements = props.filter.map((eachCharacter, index) => {
+  const characterElements = props.filter.map((eachCharacter) => {
+    // console.log(eachCharacter.id);
     return (
-      <li key={index} className="list__container">
-        <NavLink to="/character">
+      <Link to={`/character/${eachCharacter.id}`}>
+        <li key={eachCharacter.id} className="list__container">
           <CharacterCard eachCharacter={eachCharacter} />
-        </NavLink>
-      </li>
+        </li>
+      </Link>
     );
   });
   return <ul className="list">{characterElements}</ul>;

@@ -6,7 +6,7 @@ const callToApi = () => {
     .then((data) =>
       data.map((response) => ({
         // Limpio los datos
-
+        id: response.name,
         name: response.name,
         species: response.species,
         image: response.image,
