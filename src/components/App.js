@@ -1,9 +1,10 @@
 import "../styles/App.scss";
 import callToApi from "../services/api";
 import { useEffect, useState } from "react";
+import { Link, Route, Switch } from "react-router-dom";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
-import CharacterDetail from "./CharacterCard";
+import CharacterDetail from "./CharacterDetail";
 function App() {
   //estados
   const [characters, setCharacters] = useState([]);
@@ -33,10 +34,18 @@ function App() {
   };
   return (
     <div>
-      <h1>Harry Potter</h1>
-      <Filter handleInputChange={handleInputChange} />
-      <CharacterList filter={filter} characters={characters} />
-      <CharacterDetail />
+      <Route exact path="/">
+        <h1>Harry Potter</h1>
+        <Filter handleInputChange={handleInputChange} />
+      </Route>
+      <Route exact path="/">
+        <CharacterList filter={filter} characters={characters} />
+      </Route>
+      <Switch>
+        <Route exact path="/character">
+          <CharacterDetail characters={characters} />
+        </Route>
+      </Switch>
     </div>
   );
 }

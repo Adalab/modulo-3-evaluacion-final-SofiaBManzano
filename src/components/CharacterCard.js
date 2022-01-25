@@ -1,14 +1,10 @@
 import "../styles/CharacterList.scss";
+
 const CharacterCard = (props) => {
   const picture =
     props.eachCharacter.image === ""
       ? "https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter"
       : props.eachCharacter.image;
-
-  // const human =
-  //   props.eachCharacter.species === "human"
-  //     ? "Humano"
-  //     : "especie rara que tienes q mirar";
 
   const human = () => {
     if (props.eachCharacter.species === "human") {
