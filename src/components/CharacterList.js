@@ -9,6 +9,6 @@ const CharacterList = (props) => {
       </li>
     );
   });
-  return <ul>{characterElements}</ul>;
+  return <ul className="list">{characterElements}</ul>;
 };
 export default CharacterList;

@@ -3,6 +3,7 @@ import callToApi from "../services/api";
 import { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
+import CharacterDetail from "./CharacterCard";
 function App() {
   //estados
   const [characters, setCharacters] = useState([]);
@@ -35,6 +36,7 @@ function App() {
       <h1>Harry Potter</h1>
       <Filter handleInputChange={handleInputChange} />
       <CharacterList filter={filter} characters={characters} />
+      <CharacterDetail />
     </div>
   );
 }

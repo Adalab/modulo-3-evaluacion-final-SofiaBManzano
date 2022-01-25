@@ -11,6 +11,8 @@ const callToApi = () => {
         species: response.species,
         image: response.image,
         house: response.house,
+        alive: response.alive,
+        gender: response.gender,
       }))
     );
 };

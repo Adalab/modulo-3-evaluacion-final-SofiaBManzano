@@ -1,3 +1,4 @@
+import "../styles/CharacterList.scss";
 const CharacterCard = (props) => {
   const picture =
     props.eachCharacter.image === ""
@@ -41,7 +42,11 @@ const CharacterCard = (props) => {
 
   return (
     <>
-      <img alt={props.eachCharacter.name} src={picture}></img>
+      <img
+        className="list__image"
+        alt={props.eachCharacter.name}
+        src={picture}
+      ></img>
       <h3>{props.eachCharacter.name}</h3>
       <p>{human()}</p>
     </>

@@ -1,8 +1,26 @@
-.list__container {
+.list {
   list-style-type: none;
-  background-color: goldenrod;
-  width: 200px;
+
   display: flex;
-  flex-direction: column;
-  margin: 10px;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  &__container {
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 300px;
+    height: 500px;
+    border-radius: 2px;
+  }
+  &__image {
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 250px;
+    margin: 10px;
+  }
 }
