@@ -1,9 +1,10 @@
 import CharacterCard from "./CharacterCard";
+import "../styles/CharacterList.scss";
 
 const CharacterList = (props) => {
-  const characterElements = props.characters.map((eachCharacter, index) => {
+  const characterElements = props.filter.map((eachCharacter, index) => {
     return (
-      <li key={index}>
+      <li key={index} className="list__container">
         <CharacterCard eachCharacter={eachCharacter} />
       </li>
     );
