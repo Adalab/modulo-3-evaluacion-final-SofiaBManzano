@@ -3,7 +3,7 @@ import FilterName from "./FilterName";
 
 const Filter = (props) => {
   return (
-    <form>
+    <form onSubmit={(ev) => ev.preventDefault()}>
       <FilterName handleInputChange={props.handleInputChange} />
       <FilterHouse handleInputChange={props.handleInputChange} />
     </form>

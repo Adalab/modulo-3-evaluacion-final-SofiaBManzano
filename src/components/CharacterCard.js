@@ -8,7 +8,7 @@ const CharacterCard = (props) => {
 
   const human = () => {
     if (props.eachCharacter.species === "human") {
-      return "Humano";
+      return "Humanx";
     } else if (props.eachCharacter.species === "half-giant") {
       return "Medio-gigante";
     } else if (props.eachCharacter.species === "werewolf") {
