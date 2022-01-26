@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import placeholder from "../images/placeholder-harrypotter.jpg";
-
+import "../styles/CharacterDetail.scss";
 const CharacterDetail = (props) => {
   const character = props.getRouteCharacter;
   const picture = character.image === "" ? placeholder : character.image;
@@ -53,20 +53,25 @@ const CharacterDetail = (props) => {
     }
   };
   return (
-    <>
-      <NavLink to="/">Volver</NavLink>
+    <div className="detail">
+      <NavLink className="back" to="/">
+        Volver
+      </NavLink>
       <img alt={character.name} src={picture}></img>
-      <h3>{character.name}</h3>
-      <h3>Estatus:</h3>
-      {status}
-      <h3>Género:</h3>
-
-      <p>{gender}</p>
-      <h3>Especie:</h3>
-      <p>{human()}</p>
-      <h3>Casa:</h3>
-      <p>{character.house}</p>
-    </>
+      <div className="detail__title">
+        <h3 className="detail__title--name">{character.name}</h3>
+        <div className="container">
+          <h3 className="detail__title--status">Estatus:</h3>
+          <div className="detail__subtitle--status">{status}</div>
+          <h3 className="detail__title--gender">Género:</h3>
+          <p className="detail__subtitle--gender">{gender}</p>
+          <h3 className="detail__title--specie">Especie:</h3>
+          <p className="detail__subtitle--specie">{human()}</p>
+          <h3 className="detail__title--house">Casa:</h3>
+          <p className="detail__subtitle--house">{character.house}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 export default CharacterDetail;

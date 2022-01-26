@@ -44,8 +44,8 @@ const CharacterCard = (props) => {
         alt={props.eachCharacter.name}
         src={picture}
       ></img>
-      <h3>{props.eachCharacter.name}</h3>
-      <p>{human()}</p>
+      <h3 className="list__name">{props.eachCharacter.name}</h3>
+      <p className="list__specie">{human()}</p>
     </>
   );
 };

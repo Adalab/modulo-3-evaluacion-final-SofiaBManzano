@@ -1,0 +1,63 @@
+.detail {
+  background-image: url("../images/backgroundv3.jpg");
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    &--name {
+      color: rgb(2, 194, 194);
+      text-align: center;
+      font-size: 23px;
+      margin: 30px;
+    }
+    &--status {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+    &--specie {
+      color: white;
+      text-align: center;
+    }
+    &--house {
+      color: white;
+      text-align: center;
+    }
+    &--gender {
+      color: white;
+      text-align: center;
+    }
+  }
+  &__subtitle {
+    &--status {
+      color: rgb(0, 146, 146);
+      text-align: center;
+    }
+    &--status {
+      color: rgb(0, 146, 146);
+      text-align: center;
+    }
+    &--gender {
+      color: rgb(0, 146, 146);
+      text-align: center;
+    }
+    &--house {
+      color: rgb(0, 146, 146);
+      text-align: center;
+    }
+    &--specie {
+      color: rgb(0, 146, 146);
+      text-align: center;
+    }
+  }
+}
+
+.back {
+  color: white;
+  background-color: rgb(0, 146, 146);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}

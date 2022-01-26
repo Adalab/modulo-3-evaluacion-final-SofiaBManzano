@@ -6,21 +6,44 @@
   justify-content: center;
   margin-top: 60px;
   flex-wrap: wrap;
+  text-decoration: none;
   &__container {
-    background-color: goldenrod;
+    // background: linear-gradient(
+    //   30deg,
+    //   rgba(1, 106, 138, 0.678),
+    //   rgba(6, 168, 189, 0)
+    // );
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
+    padding: 20px;
     width: 300px;
-    height: 500px;
+    //height: 500px;
     border-radius: 2px;
   }
   &__image {
     box-sizing: border-box;
     border-radius: 6px;
-    width: 250px;
+    width: 150px;
     margin: 10px;
+  }
+  &__name {
+    text-decoration: none;
+    line-height: 22px;
+    padding-left: 20px;
+    text-align: left;
+    color: white;
+    width: 150px;
+  }
+  &__specie {
+    text-decoration: none;
+    line-height: 22px;
+    padding-left: 20px;
+    text-align: left;
+    color: rgb(0, 146, 146);
+    text-shadow: black 2px 2px 2px;
+    width: 150px;
   }
 }
