@@ -1,4 +1,5 @@
 // Fichero src/services/api.js
+import uuid from "react-uuid";
 const callToApi = () => {
   // Llamamos al API
   return fetch("http://hp-api.herokuapp.com/api/characters")
@@ -6,7 +7,7 @@ const callToApi = () => {
     .then((data) =>
       data.map((response) => ({
         // Limpio los datos
-        id: response.name,
+        id: uuid(),
         name: response.name,
         species: response.species,
         image: response.image,

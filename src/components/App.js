@@ -29,15 +29,16 @@ function App() {
   const routeCharacterData = useRouteMatch("/character/:characterId");
   const getRouteCharacter = () => {
     if (routeCharacterData !== null) {
-      console.log(routeCharacterData.params.characterId);
+      // console.log(routeCharacterData.params.characterId);
       const routeCharacterId = routeCharacterData.params.characterId;
+      // console.log(routeCharacterId);
       const routeCharacter = characters.find((character) => {
         return character.id === routeCharacterId;
       });
       return routeCharacter;
     }
   };
-
+  // console.log(getRouteCharacter());
   //funcion manejadora Input
 
   const handleInputChange = (value, key) => {
@@ -58,7 +59,7 @@ function App() {
       </Route>
       <Switch>
         <Route exact path="/character/:characterId">
-          <CharacterDetail characters={getRouteCharacter()} />
+          <CharacterDetail getRouteCharacter={getRouteCharacter()} />
         </Route>
       </Switch>
     </div>

@@ -6,8 +6,8 @@ const CharacterList = (props) => {
   const characterElements = props.filter.map((eachCharacter) => {
     // console.log(eachCharacter.id);
     return (
-      <Link to={`/character/${eachCharacter.id}`}>
-        <li key={eachCharacter.id} className="list__container">
+      <Link key={eachCharacter.id} to={`/character/${eachCharacter.id}`}>
+        <li className="list__container">
           <CharacterCard eachCharacter={eachCharacter} />
         </li>
       </Link>
