@@ -16,9 +16,10 @@ const CharacterList = (props) => {
     });
     return <ul className="list">{characterElements}</ul>;
   } else {
+    console.log(props.filter);
     return (
       <h3 className="text">
-        No te inventes nombres, ¡No hay ningún personaje que se llame
+        No te inventes nombres, ¡No hay ningún personaje que se llame{" "}
         {props.filterName}!.
       </h3>
     );

@@ -2,14 +2,19 @@ import "../styles/CharacterList.scss";
 import placeholder from "../images/placeholder-harrypotter.jpg";
 const CharacterCard = (props) => {
   const picture =
-    props.eachCharacter.image === ""
-      ? placeholder
-      : // ? "https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter"
-        props.eachCharacter.image;
+    props.eachCharacter.image === "" ? placeholder : props.eachCharacter.image;
 
   const human = () => {
-    if (props.eachCharacter.species === "human") {
-      return "Humanx";
+    if (
+      props.eachCharacter.species === "human" &&
+      props.eachCharacter.gender === "female"
+    ) {
+      return "Humana";
+    } else if (
+      props.eachCharacter.species === "human" &&
+      props.eachCharacter.gender === "male"
+    ) {
+      return "Humano";
     } else if (props.eachCharacter.species === "half-giant") {
       return "Medio-gigante";
     } else if (props.eachCharacter.species === "werewolf") {

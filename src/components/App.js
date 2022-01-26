@@ -13,6 +13,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("gryffindor");
+  const [filterGender, setFilterGender] = useState("");
   useEffect(() => {
     callToApi(
       `http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`
@@ -23,7 +24,7 @@ function App() {
   }, [filterHouse]);
 
   //constante que hace el filtro
-  const filter = characters
+  let filter = characters
     .sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
@@ -37,6 +38,12 @@ function App() {
       character.name.toLowerCase().includes(filterName.toLowerCase())
     )
     .filter((character) => character.house.toLowerCase().includes(filterHouse));
+  filter =
+    filterGender === ""
+      ? filter
+      : filter.filter(
+          (character) => character.gender.toLowerCase() === filterGender
+        );
 
   //const routeMatch
   const routeCharacterData = useRouteMatch("/character/:characterId");
@@ -59,6 +66,8 @@ function App() {
       setFilterName(value);
     } else if (key === "house") {
       setFilterHouse(value);
+    } else if (key === "gender") {
+      setFilterGender(value);
     }
   };
 
@@ -70,6 +79,7 @@ function App() {
         <Filter
           filterHouse={filterHouse}
           filterName={filterName}
+          filterGender={filterGender}
           handleInputChange={handleInputChange}
         />
       </Route>

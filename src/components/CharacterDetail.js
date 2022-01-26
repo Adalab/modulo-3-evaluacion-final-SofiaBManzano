@@ -6,26 +6,50 @@ const CharacterDetail = (props) => {
   const picture = character.image === "" ? placeholder : character.image;
 
   const gender = character.gender === "female" ? "Mujer" : "Hombre";
-  const status =
-    character.alive === true ? (
+
+  const status = () => {
+    if (character.alive === true && character.gender === "male") {
+      return (
+        <p>
+          Vivo
+          <span>
+            <i className="fas fa-hat-wizard"> </i>
+          </span>
+        </p>
+      );
+    } else if (character.alive === true && character.gender === "female") {
+      return (
+        <p>
+          Viva
+          <span>
+            <i className="fas fa-hat-wizard"> </i>
+          </span>
+        </p>
+      );
+    } else if (character.alive === false && character.gender === "female") {
+      return (
+        <p>
+          Muerta
+          <span>
+            <i className="fas fa-solid fa-church"></i>
+          </span>
+        </p>
+      );
+    } else {
       <p>
-        "Vivx"
-        <span>
-          <i className="fas fa-hat-wizard"> </i>
-        </span>
-      </p>
-    ) : (
-      <p>
-        Muerta
+        Muerto
         <span>
           <i className="fas fa-solid fa-church"></i>
         </span>
-      </p>
-    );
+      </p>;
+    }
+  };
 
   const human = () => {
-    if (character.species === "human") {
-      return "Humanx";
+    if (character.species === "human" && character.gender === "female") {
+      return "Humana";
+    } else if (character.species === "human" && character.gender === "male") {
+      return "Humano";
     } else if (character.species === "half-giant") {
       return "Medio-gigante";
     } else if (character.species === "werewolf") {
@@ -57,12 +81,12 @@ const CharacterDetail = (props) => {
       <NavLink className="back" to="/">
         Volver
       </NavLink>
-      <img alt={character.name} src={picture}></img>
+      <img className="detail__img" alt={character.name} src={picture}></img>
       <div className="detail__title">
         <h3 className="detail__title--name">{character.name}</h3>
         <div className="container">
           <h3 className="detail__title--status">Estatus:</h3>
-          <div className="detail__subtitle--status">{status}</div>
+          <div className="detail__subtitle--status">{status()}</div>
           <h3 className="detail__title--gender">Género:</h3>
           <p className="detail__subtitle--gender">{gender}</p>
           <h3 className="detail__title--specie">Especie:</h3>

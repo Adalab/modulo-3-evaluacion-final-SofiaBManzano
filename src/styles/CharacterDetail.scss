@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  &__img {
+    height: 250px;
+    filter: contrast(160%) grayscale(100%);
+
+    border-radius: 10px;
+  }
   &__title {
     &--name {
       color: rgb(2, 194, 194);
