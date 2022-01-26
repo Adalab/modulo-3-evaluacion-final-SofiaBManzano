@@ -1,7 +1,7 @@
 import "../styles/App.scss";
 import callToApi from "../services/api";
 import { useEffect, useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
 import CharacterDetail from "./CharacterDetail";
@@ -12,14 +12,25 @@ function App() {
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("gryffindor");
   useEffect(() => {
-    callToApi().then((apiData) => {
+    callToApi(
+      `http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`
+    ).then((apiData) => {
       setCharacters(apiData);
+      console.log(apiData);
     });
-  }, []);
-  console.log(characters);
+  }, [filterHouse]);
 
   //constante que hace el filtro
   const filter = characters
+    .sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    })
     .filter((character) =>
       character.name.toLowerCase().includes(filterName.toLowerCase())
     )
@@ -52,10 +63,18 @@ function App() {
     <div>
       <Route exact path="/">
         <h1>Harry Potter</h1>
-        <Filter handleInputChange={handleInputChange} />
+        <Filter
+          filterHouse={filterHouse}
+          filterName={filterName}
+          handleInputChange={handleInputChange}
+        />
       </Route>
       <Route exact path="/">
-        <CharacterList filter={filter} characters={characters} />
+        <CharacterList
+          filterName={filterName}
+          filter={filter}
+          characters={characters}
+        />
       </Route>
       <Switch>
         <Route exact path="/character/:characterId">

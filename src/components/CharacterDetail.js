@@ -42,8 +42,10 @@ const CharacterDetail = (props) => {
       <img alt={character.name} src={picture}></img>
       <h3>{character.name}</h3>
       <h3>Estatus:</h3>
+      <span>&#10015;</span>
       <p>{status}</p>
       <h3>Género:</h3>
+      <i class="fa-solid fa-church"></i>
       <p>{gender}</p>
       <h3>Especie:</h3>
       <p>{human()}</p>

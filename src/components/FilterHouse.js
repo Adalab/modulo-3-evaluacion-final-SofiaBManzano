@@ -5,7 +5,7 @@ const FilterHouse = (props) => {
   return (
     <>
       <label>Filtra por casa</label>
-      <select onChange={handleSelect}>
+      <select value={props.FilterHouse} onChange={handleSelect}>
         <option value="gryffindor"> Gryffindor</option>
         <option value="hufflepuff"> Hufflepuff</option>
         <option value="ravenclaw"> Ravenclaw</option>
