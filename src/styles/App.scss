@@ -11,5 +11,14 @@
 .body {
   background-image: url("../images/backgroundv3.jpg");
   background-size: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   // height: 100vh;
+}
+.header {
+  margin: 40px;
+  height: 70vh;
 }

@@ -6,6 +6,8 @@ import CharacterList from "./CharacterList";
 import Filter from "./Filter";
 import CharacterDetail from "./CharacterDetail";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
+import header from "../images/logo-header.png";
+
 function App() {
   //estados
   const [characters, setCharacters] = useState([]);
@@ -59,10 +61,12 @@ function App() {
       setFilterHouse(value);
     }
   };
+
   return (
     <div className="body">
       <Route exact path="/">
-        <h1>Harry Potter</h1>
+        <img className="header" src={header} alt="Harry Potter" />
+
         <Filter
           filterHouse={filterHouse}
           filterName={filterName}
