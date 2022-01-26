@@ -1,11 +1,8 @@
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-
+import placeholder from "../images/placeholder-harrypotter.jpg";
 const CharacterDetail = (props) => {
   const character = props.getRouteCharacter;
-  const picture =
-    character.image === ""
-      ? "https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter"
-      : character.image;
+  const picture = character.image === "" ? placeholder : character.image;
 
   const gender = character.gender === "female" ? "Mujer" : "Hombre";
   const status = character.alive === true ? "Vivx" : "Muerta :(";
