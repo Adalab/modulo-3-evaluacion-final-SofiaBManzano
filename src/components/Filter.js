@@ -1,9 +1,9 @@
 import FilterHouse from "./FilterHouse";
 import FilterName from "./FilterName";
-
+import "../styles/Filter.scss";
 const Filter = (props) => {
   return (
-    <form onSubmit={(ev) => ev.preventDefault()}>
+    <form className="filter" onSubmit={(ev) => ev.preventDefault()}>
       <FilterName
         filterName={props.filterName}
         handleInputChange={props.handleInputChange}

@@ -60,7 +60,7 @@ function App() {
     }
   };
   return (
-    <div>
+    <div className="body">
       <Route exact path="/">
         <h1>Harry Potter</h1>
         <Filter

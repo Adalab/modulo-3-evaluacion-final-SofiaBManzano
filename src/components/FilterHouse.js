@@ -4,13 +4,15 @@ const FilterHouse = (props) => {
   };
   return (
     <>
-      <label>Filtra por casa</label>
-      <select value={props.FilterHouse} onChange={handleSelect}>
-        <option value="gryffindor"> Gryffindor</option>
-        <option value="hufflepuff"> Hufflepuff</option>
-        <option value="ravenclaw"> Ravenclaw</option>
-        <option value="slytherin"> Slytherin</option>
-      </select>
+      <label className="filter__text">Filtra por casa</label>
+      <div className="filter__select">
+        <select value={props.FilterHouse} onChange={handleSelect}>
+          <option value="gryffindor"> Gryffindor</option>
+          <option value="hufflepuff"> Hufflepuff</option>
+          <option value="ravenclaw"> Ravenclaw</option>
+          <option value="slytherin"> Slytherin</option>
+        </select>
+      </div>
     </>
   );
 };

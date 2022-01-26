@@ -1,0 +1,56 @@
+.filter {
+  //background-color: pink;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 2px solid rgb(154, 1, 255);
+  border-radius: 20px;
+  &__text {
+    padding: 20px;
+    text-transform: uppercase;
+    color: white;
+  }
+  &__input {
+    margin-left: 15px;
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+  }
+  &__select {
+    //color: white;
+    height: 40px;
+    width: 150px;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    position: relative;
+    padding: 10px 0;
+  }
+  &__select:after {
+    //color: white;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    right: 3px;
+    content: "";
+    z-index: 98;
+  }
+  &__select select {
+    color: white;
+    width: 220px;
+    border: transparent;
+    position: relative;
+    z-index: 99;
+    background: none;
+  }
+  &__select option {
+    color: black;
+    background: none;
+  }
+}

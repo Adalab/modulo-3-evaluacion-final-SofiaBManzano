@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
-  font-family: monospace;
   margin: 0;
+  //cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
   padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  text-decoration: none;
+
   // background-image: url("../images/background.jpg");
+}
+.body {
+  background-image: url("../images/backgroundv3.jpg");
 }
