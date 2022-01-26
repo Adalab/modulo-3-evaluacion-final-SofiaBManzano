@@ -1,11 +1,27 @@
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import placeholder from "../images/placeholder-harrypotter.jpg";
+
 const CharacterDetail = (props) => {
   const character = props.getRouteCharacter;
   const picture = character.image === "" ? placeholder : character.image;
 
   const gender = character.gender === "female" ? "Mujer" : "Hombre";
-  const status = character.alive === true ? "Vivx" : "Muerta :(";
+  const status =
+    character.alive === true ? (
+      <p>
+        "Vivx"
+        <span>
+          <i className="fas fa-hat-wizard"> </i>
+        </span>
+      </p>
+    ) : (
+      <p>
+        Muerta
+        <span>
+          <i className="fas fa-solid fa-church"></i>
+        </span>
+      </p>
+    );
 
   const human = () => {
     if (character.species === "human") {
@@ -42,10 +58,9 @@ const CharacterDetail = (props) => {
       <img alt={character.name} src={picture}></img>
       <h3>{character.name}</h3>
       <h3>Estatus:</h3>
-      <span>&#10015;</span>
-      <p>{status}</p>
+      {status}
       <h3>Género:</h3>
-      <i class="fa-solid fa-church"></i>
+
       <p>{gender}</p>
       <h3>Especie:</h3>
       <p>{human()}</p>
