@@ -7,6 +7,10 @@
   padding-bottom: 20px;
   border: 2px solid rgb(154, 1, 255);
   border-radius: 20px;
+  transition: background-color ease-in 0.5s;
+  &:hover {
+    background-color: rgba(182, 83, 248, 0.24);
+  }
   &__text {
     padding: 20px;
     text-transform: uppercase;

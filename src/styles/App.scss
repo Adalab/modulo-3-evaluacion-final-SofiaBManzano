@@ -10,7 +10,7 @@
 }
 .body {
   background-image: url("../images/backgroundv3.jpg");
-  background-size: 100vh;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,4 +21,18 @@
 .header {
   margin: 40px;
   height: 70vh;
+  animation-name: intro;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+
+  @keyframes intro {
+    from {
+      opacity: 0;
+      height: 100vh;
+    }
+    to {
+      opacity: 1;
+      height: 70vh;
+    }
+  }
 }
