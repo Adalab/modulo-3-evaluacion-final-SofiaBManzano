@@ -7,6 +7,7 @@ import Filter from "./Filter";
 import CharacterDetail from "./CharacterDetail";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import header from "../images/logo-header.png";
+import NotFound from "./NotFound";
 
 function App() {
   //estados
@@ -19,7 +20,7 @@ function App() {
       `http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`
     ).then((apiData) => {
       setCharacters(apiData);
-      console.log(apiData);
+      // console.log(apiData);
     });
   }, [filterHouse]);
 
@@ -46,17 +47,39 @@ function App() {
         );
 
   //const routeMatch
+  // const routeCharacterData = useRouteMatch("/character/:characterId");
+  // const getRouteCharacter = () => {
+  //   if (routeCharacterData !== null) {
+  //     // console.log(routeCharacterData.params.characterId);
+  //     const routeCharacterId = routeCharacterData.params.characterId;
+  //     console.log(routeCharacterId);
+  //     const routeCharacter = characters.find((character) => {
+  //       return character.id === routeCharacterId;
+  //     });
+  //     if (routeCharacter) {
+  //       return routeCharacter;
+  //     } else {
+  //       {
+  //       }
+  //     }
+  //   }
+  // };
   const routeCharacterData = useRouteMatch("/character/:characterId");
+  console.log(routeCharacterData);
   const getRouteCharacter = () => {
-    if (routeCharacterData !== null) {
-      // console.log(routeCharacterData.params.characterId);
+    if (routeCharacterData) {
       const routeCharacterId = routeCharacterData.params.characterId;
-      // console.log(routeCharacterId);
+      //consolea el id
+      console.log(routeCharacterId);
       const routeCharacter = characters.find((character) => {
         return character.id === routeCharacterId;
       });
-      return routeCharacter;
+
+      return routeCharacter || {};
     }
+    // else if (routeCharacterData) {
+    //   routeCharacterId !==
+    // }
   };
   // console.log(getRouteCharacter());
   //funcion manejadora Input
@@ -93,6 +116,9 @@ function App() {
       <Switch>
         <Route exact path="/character/:characterId">
           <CharacterDetail getRouteCharacter={getRouteCharacter()} />
+        </Route>
+        <Route>
+          <NotFound />
         </Route>
       </Switch>
     </div>
