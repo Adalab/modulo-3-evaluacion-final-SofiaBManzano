@@ -46,24 +46,6 @@ function App() {
           (character) => character.gender.toLowerCase() === filterGender
         );
 
-  //const routeMatch
-  // const routeCharacterData = useRouteMatch("/character/:characterId");
-  // const getRouteCharacter = () => {
-  //   if (routeCharacterData !== null) {
-  //     // console.log(routeCharacterData.params.characterId);
-  //     const routeCharacterId = routeCharacterData.params.characterId;
-  //     console.log(routeCharacterId);
-  //     const routeCharacter = characters.find((character) => {
-  //       return character.id === routeCharacterId;
-  //     });
-  //     if (routeCharacter) {
-  //       return routeCharacter;
-  //     } else {
-  //       {
-  //       }
-  //     }
-  //   }
-  // };
   const routeCharacterData = useRouteMatch("/character/:characterId");
   console.log(routeCharacterData);
   const getRouteCharacter = () => {

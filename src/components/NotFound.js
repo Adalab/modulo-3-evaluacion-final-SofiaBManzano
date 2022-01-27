@@ -5,7 +5,7 @@ const NotFound = () => {
     <div className="notFound">
       <h1 className="notFound__text">El personaje que buscas no existe</h1>
       <span className="notFound__text--sad">
-        <i class="fas fa-frown-open"></i>
+        <i className="fas fa-frown-open"></i>
       </span>
     </div>
   );

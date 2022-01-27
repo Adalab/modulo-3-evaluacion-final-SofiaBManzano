@@ -67,3 +67,13 @@
   padding: 10px;
   border-radius: 5px;
 }
+@media all and (min-width: 375px) {
+  .detail {
+    //background-image: url("../images/backgroundv3.jpg");
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
