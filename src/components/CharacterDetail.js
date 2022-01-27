@@ -8,6 +8,8 @@ const CharacterDetail = (props) => {
   const gender = character.gender === "female" ? "Mujer" : "Hombre";
 
   const status = () => {
+    console.log(character.alive, character.gender);
+
     if (character.alive === true && character.gender === "male") {
       return (
         <p>
@@ -35,13 +37,15 @@ const CharacterDetail = (props) => {
           </span>
         </p>
       );
-    } else {
-      <p>
-        Muerto
-        <span>
-          <i className="fas fa-solid fa-church"></i>
-        </span>
-      </p>;
+    } else if (character.alive === false && character.gender === "male") {
+      return (
+        <p>
+          Muerto
+          <span>
+            <i className="fas fa-solid fa-church"></i>
+          </span>
+        </p>
+      );
     }
   };
 

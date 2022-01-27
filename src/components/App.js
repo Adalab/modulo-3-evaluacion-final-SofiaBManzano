@@ -20,7 +20,7 @@ function App() {
       `http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`
     ).then((apiData) => {
       setCharacters(apiData);
-      // console.log(apiData);
+      console.log(apiData);
     });
   }, [filterHouse]);
 
@@ -78,24 +78,24 @@ function App() {
 
   return (
     <div className="body">
-      <Route exact path="/">
-        <img className="header" src={header} alt="Harry Potter" />
-
-        <Filter
-          filterHouse={filterHouse}
-          filterName={filterName}
-          filterGender={filterGender}
-          handleInputChange={handleInputChange}
-        />
-      </Route>
-      <Route exact path="/">
-        <CharacterList
-          filterName={filterName}
-          filter={filter}
-          characters={characters}
-        />
-      </Route>
       <Switch>
+        <Route exact path="/">
+          <img className="header" src={header} alt="Harry Potter" />
+
+          <Filter
+            filterHouse={filterHouse}
+            filterName={filterName}
+            filterGender={filterGender}
+            handleInputChange={handleInputChange}
+          />
+
+          <CharacterList
+            filterName={filterName}
+            filter={filter}
+            characters={characters}
+          />
+        </Route>
+
         <Route exact path="/character/:characterId">
           <CharacterDetail getRouteCharacter={getRouteCharacter()} />
         </Route>
