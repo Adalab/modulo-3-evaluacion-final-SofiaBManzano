@@ -15,6 +15,7 @@ function App() {
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("gryffindor");
   const [filterGender, setFilterGender] = useState("");
+  const [alternateNames, setAlternateNames] = useState(0);
   useEffect(() => {
     callToApi(
       `http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`
@@ -38,7 +39,11 @@ function App() {
     .filter((character) =>
       character.name.toLowerCase().includes(filterName.toLowerCase())
     )
-    .filter((character) => character.house.toLowerCase().includes(filterHouse));
+    .filter((character) => character.house.toLowerCase().includes(filterHouse))
+    .filter(
+      (character) =>
+        character.alternatenames.length === parseInt(alternateNames)
+    );
   filter =
     filterGender === ""
       ? filter
@@ -73,6 +78,8 @@ function App() {
       setFilterHouse(value);
     } else if (key === "gender") {
       setFilterGender(value);
+    } else if (key === "number") {
+      setAlternateNames(value);
     }
   };
 
@@ -86,7 +93,9 @@ function App() {
             filterHouse={filterHouse}
             filterName={filterName}
             filterGender={filterGender}
+            alternateNames={alternateNames}
             handleInputChange={handleInputChange}
+            // characters={characters}
           />
 
           <CharacterList

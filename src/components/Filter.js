@@ -2,6 +2,7 @@ import FilterHouse from "./FilterHouse";
 import FilterName from "./FilterName";
 import "../styles/Filter.scss";
 import FilterGender from "./FilterGender";
+import AlternateNames from "./AlternateNames";
 const Filter = (props) => {
   return (
     <form className="filter" onSubmit={(ev) => ev.preventDefault()}>
@@ -16,6 +17,10 @@ const Filter = (props) => {
       <FilterGender
         filterGender={props.filterGender}
         handleInputChange={props.handleInputChange}
+      />
+      <AlternateNames
+        handleInputChange={props.handleInputChange}
+        alternateNames={props.AlternateNames}
       />
     </form>
   );

@@ -8,6 +8,7 @@ const callToApi = (url) => {
       data.map((response) => ({
         // Limpio los datos
         id: `${response.name}${response.actor}`,
+        alternatenames: response.alternate_names,
         name: response.name,
         species: response.species,
         image: response.image,
