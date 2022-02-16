@@ -1,5 +1,4 @@
 // Fichero src/services/api.js
-import uuid from "react-uuid";
 const callToApi = (url) => {
   // Llamamos al API
   return fetch(url)
