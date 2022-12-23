@@ -1,7 +1,7 @@
 # Buscador de personajes Harry Potter
 
-Página creada con React a partir de una API con los personajes de Harry Potter para la evaluación final de React.
-Crea componentes con sintaxis correcta
+Página creada con React a partir de una API con los personajes de Harry Potter.
+
 
 - Estructura con componentes
 - Props y lifting
